@@ -6,7 +6,8 @@ body {
     background: black;
 }
 
-.hero {
+.hero,
+.about-page {
     min-height: 100vh;
     position: relative;
     display: flex;
@@ -27,7 +28,8 @@ body {
     z-index: 1;
 }
 
-.hero-content {
+.hero-content,
+.about-content {
     position: relative;
     z-index: 2;
     padding: 20px;
@@ -40,6 +42,21 @@ body {
     filter: drop-shadow(8px 8px 0px black);
 }
 
+.about-logo {
+    width: 280px;
+    max-width: 85%;
+    margin-bottom: 10px;
+    filter: drop-shadow(7px 7px 0px black);
+}
+
+h1 {
+    font-size: 5rem;
+    margin: 0 0 20px;
+    letter-spacing: 3px;
+    color: white;
+    text-shadow: 7px 7px 0px black;
+}
+
 .tagline {
     font-size: 1.7rem;
     color: white;
@@ -47,6 +64,18 @@ body {
     line-height: 1;
     text-shadow: 4px 4px 0px black;
     margin-top: 10px;
+}
+
+.about-content {
+    max-width: 1100px;
+}
+
+.about-content p {
+    font-size: 2rem;
+    line-height: 0.95;
+    letter-spacing: 1px;
+    text-shadow: 5px 5px 0px black;
+    margin: 22px auto;
 }
 
 .button {
@@ -69,4 +98,18 @@ body {
     color: black;
     transform: translateY(-4px);
     box-shadow: 10px 10px 0px #ff003c;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3.2rem;
+    }
+
+    .about-content p {
+        font-size: 1.45rem;
+    }
+
+    .logo {
+        width: 340px;
+    }
 }
