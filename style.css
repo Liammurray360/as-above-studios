@@ -167,6 +167,9 @@ h1 {
     line-height: 1.8;
 
     font-size: 1rem;
+
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 .hero-copy {
@@ -279,6 +282,10 @@ h1 {
     padding: 24px;
 }
 
+.contact-box {
+    min-width: 0;
+}
+
 .mini-card h2,
 .contact-box h2 {
     margin-bottom: 10px;
@@ -343,7 +350,7 @@ h1 {
     }
 
     .hero-logo-wrap {
-        justify-content: flex-start;
+        justify-content: center;
     }
 
     .hero-logo {
