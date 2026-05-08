@@ -1,52 +1,71 @@
 body {
     margin: 0;
-    background: black;
     color: white;
     font-family: 'Bangers', cursive;
     overflow-x: hidden;
+    background: black;
 }
 
 .hero {
     min-height: 100vh;
+    position: relative;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+
+    background-image: url("Background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.58);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
     padding: 20px;
 }
 
 .logo {
-    width: 420px;
+    width: 460px;
     max-width: 90%;
-    margin-bottom: 20px;
-}
-
-h1 {
-    font-size: 5rem;
-    margin: 0;
-    letter-spacing: 4px;
+    margin-bottom: 25px;
+    filter: drop-shadow(8px 8px 0px black);
 }
 
 .tagline {
-    font-size: 1.6rem;
-    color: #ff0048;
-    margin-top: 15px;
+    font-size: 1.7rem;
+    color: white;
+    letter-spacing: 2px;
+    text-shadow: 4px 4px 0px black;
+    margin-top: 10px;
 }
 
 .button {
+    display: inline-block;
     margin-top: 35px;
-    background: #ff0048;
+    background: #ff003c;
     color: white;
     text-decoration: none;
-    padding: 15px 40px;
+    padding: 16px 42px;
     border-radius: 14px;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    border: 3px solid white;
+    box-shadow: 6px 6px 0px black;
     transition: 0.2s ease;
 }
 
 .button:hover {
     background: white;
     color: black;
-    transform: scale(1.05);
+    transform: translateY(-4px);
+    box-shadow: 10px 10px 0px #ff003c;
 }
