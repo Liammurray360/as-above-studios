@@ -36,14 +36,15 @@ body {
 .logo {
     width: 460px;
     max-width: 90%;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
     filter: drop-shadow(8px 8px 0px black);
 }
 
 .tagline {
     font-size: 1.7rem;
     color: white;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
+    line-height: 1;
     text-shadow: 4px 4px 0px black;
     margin-top: 10px;
 }
