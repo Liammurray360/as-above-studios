@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    background: black;
+    color: white;
+    font-family: 'Bangers', cursive;
+    overflow-x: hidden;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.logo {
+    width: 420px;
+    max-width: 90%;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 5rem;
+    margin: 0;
+    letter-spacing: 4px;
+}
+
+.tagline {
+    font-size: 1.6rem;
+    color: #ff0048;
+    margin-top: 15px;
+}
+
+.button {
+    margin-top: 35px;
+    background: #ff0048;
+    color: white;
+    text-decoration: none;
+    padding: 15px 40px;
+    border-radius: 14px;
+    font-size: 1.3rem;
+    transition: 0.2s ease;
+}
+
+.button:hover {
+    background: white;
+    color: black;
+    transform: scale(1.05);
+}
