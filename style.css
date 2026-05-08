@@ -128,9 +128,11 @@ h1 {
 }
 
 .hero-copy,
+.page-copy,
 .text-grid p,
 .mini-card p,
-.contact-box p {
+.contact-box p,
+.mix-card p {
     color: var(--muted);
     line-height: 1.8;
     font-size: 1rem;
@@ -140,6 +142,11 @@ h1 {
 
 .hero-copy {
     max-width: 620px;
+}
+
+.page-copy {
+    max-width: 650px;
+    margin-bottom: 24px;
 }
 
 .hero-actions {
@@ -173,6 +180,10 @@ h1 {
     border: 1px solid var(--line);
     color: white;
     background: rgba(255,255,255,0.05);
+}
+
+.button:hover {
+    transform: translateY(-3px);
 }
 
 .content-card {
@@ -212,14 +223,16 @@ h1 {
 .mini-card,
 .gear-list div,
 .contact-box,
-.price-row {
+.price-row,
+.mix-card {
     background: rgba(255,255,255,0.05);
     border: 1px solid var(--line);
     border-radius: 24px;
 }
 
 .mini-card,
-.contact-box {
+.contact-box,
+.mix-card {
     padding: 24px;
 }
 
@@ -228,8 +241,13 @@ h1 {
 }
 
 .mini-card h2,
-.contact-box h2 {
+.contact-box h2,
+.mix-card h2 {
     margin-bottom: 10px;
+}
+
+.mix-card .button {
+    margin-top: 22px;
 }
 
 .gear-list div {
@@ -288,10 +306,11 @@ h1 {
     }
 
     .hero-logo-wrap {
-        order: -1;
+        order: 2;
     }
 
     .hero-block {
+        order: 1;
         text-align: center;
     }
 
@@ -356,9 +375,11 @@ h1 {
     }
 
     .hero-copy,
+    .page-copy,
     .text-grid p,
     .mini-card p,
-    .contact-box p {
+    .contact-box p,
+    .mix-card p {
         font-size: 0.95rem;
         line-height: 1.65;
     }
