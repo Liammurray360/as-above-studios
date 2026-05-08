@@ -29,7 +29,7 @@ body::before {
     inset: 0;
 
     background:
-        linear-gradient(90deg, rgba(0,0,0,0.95), rgba(0,0,0,0.62), rgba(0,0,0,0.94)),
+        linear-gradient(90deg, rgba(0,0,0,0.96), rgba(0,0,0,0.6), rgba(0,0,0,0.94)),
         radial-gradient(circle at 72% 24%, rgba(255,35,79,0.18), transparent 32%),
         url("Background.png");
 
@@ -40,16 +40,15 @@ body::before {
 
 .navbar {
     position: fixed;
-    top: 22px;
-    left: 50%;
-    transform: translateX(-50%);
 
-    width: calc(100% - 44px);
-    max-width: 1180px;
+    top: 22px;
+    right: 22px;
+
+    width: auto;
 
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: 18px;
 
     padding: 14px 18px;
 
@@ -64,7 +63,7 @@ body::before {
 }
 
 .brand img {
-    width: 92px;
+    width: 74px;
     display: block;
 }
 
@@ -106,19 +105,30 @@ body::before {
     align-items: center;
 }
 
+.hero-page {
+    align-items: center;
+}
+
 .hero-split {
     width: 100%;
-    max-width: 1250px;
+    max-width: 1600px;
 
     display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 50px;
+    grid-template-columns: 1fr 0.8fr;
+
+    gap: 40px;
+    align-items: center;
+}
+
+.hero-logo-wrap {
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
 .hero-logo {
     width: 100%;
-    max-width: 520px;
+    max-width: 420px;
 
     filter: drop-shadow(0 30px 60px rgba(0,0,0,0.6));
 }
@@ -326,9 +336,23 @@ h1 {
     text-transform: uppercase;
 }
 
+@media (max-width: 1100px) {
+
+    .hero-split {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-logo-wrap {
+        justify-content: flex-start;
+    }
+
+    .hero-logo {
+        max-width: 260px;
+    }
+}
+
 @media (max-width: 950px) {
 
-    .hero-split,
     .text-grid,
     .card-grid,
     .gear-list,
@@ -336,21 +360,16 @@ h1 {
         grid-template-columns: 1fr;
     }
 
-    .hero-logo-wrap {
-        display: flex;
-        justify-content: center;
-    }
-
     .hero-block {
-        text-align: center;
+        text-align: left;
     }
 
     .hero-copy {
-        margin: auto;
+        margin: 0;
     }
 
     .hero-actions {
-        justify-content: center;
+        justify-content: flex-start;
     }
 }
 
@@ -358,8 +377,11 @@ h1 {
 
     .navbar {
         top: 12px;
+        right: 12px;
 
         width: calc(100% - 24px);
+
+        justify-content: center;
 
         flex-direction: column;
 
@@ -386,5 +408,21 @@ h1 {
 
     .price-row {
         flex-direction: column;
+    }
+
+    .hero-logo-wrap {
+        justify-content: center;
+    }
+
+    .hero-block {
+        text-align: center;
+    }
+
+    .hero-copy {
+        margin: auto;
+    }
+
+    .hero-actions {
+        justify-content: center;
     }
 }
