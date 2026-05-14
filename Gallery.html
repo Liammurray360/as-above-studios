@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>As Above Studios — Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <style>
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            border: 1px solid var(--line);
+            background: rgba(255,255,255,0.04);
+            cursor: pointer;
+            aspect-ratio: 4 / 3;
+            transition: 0.25s ease;
+        }
+
+        .gallery-item:hover {
+            border-color: rgba(255, 35, 79, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-item .overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(255, 35, 79, 0.0);
+            transition: 0.25s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-item:hover .overlay {
+            background: rgba(255, 35, 79, 0.12);
+        }
+
+        .overlay-icon {
+            opacity: 0;
+            color: white;
+            font-size: 2rem;
+            transition: 0.25s ease;
+        }
+
+        .gallery-item:hover .overlay-icon {
+            opacity: 1;
+        }
+
+        /* LIGHTBOX */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(12px);
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90vw;
+            max-height: 88vh;
+            object-fit: contain;
+            border-radius: 16px;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.7);
+            border: 1px solid var(--line);
+        }
+
+        .lightbox-close {
+            position: fixed;
+            top: 22px;
+            right: 26px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid var(--line);
+            color: white;
+            font-size: 1.4rem;
+            width: 46px;
+            height: 46px;
+            border-radius: 999px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.2s ease;
+            line-height: 1;
+        }
+
+        .lightbox-close:hover {
+            background: var(--red);
+            border-color: var(--red);
+        }
+
+        .lightbox-prev,
+        .lightbox-next {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.08);
+            border: 1px solid var(--line);
+            color: white;
+            font-size: 1.2rem;
+            width: 46px;
+            height: 46px;
+            border-radius: 999px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.2s ease;
+        }
+
+        .lightbox-prev { left: 18px; }
+        .lightbox-next { right: 18px; }
+
+        .lightbox-prev:hover,
+        .lightbox-next:hover {
+            background: var(--red);
+            border-color: var(--red);
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 12px;
+            }
+
+            .lightbox-prev { left: 8px; }
+            .lightbox-next { right: 8px; }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="index.html" class="brand"><img src="AAS_Logo.png" alt="As Above Studios"></a>
+    <div class="nav-links">
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="gear.html">Gear</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="mixes.html">Mixes</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</nav>
+
+<main class="page">
+    <section class="content-card wide">
+        <p class="eyebrow">The Space</p>
+        <h1>Gallery</h1>
+        <p class="page-copy">A look inside As Above Studios — the gear, the room, and the vibe.</p>
+
+        <div class="gallery-grid">
+            <div class="gallery-item" onclick="openLightbox(0)">
+                <img src="WhatsApp Image 2026-05-13 at 07.38.04.jpeg" alt="Studio photo" loading="lazy">
+                <div class="overlay"><span class="overlay-icon">⊕</span></div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(1)">
+                <img src="WhatsApp Image 2026-05-13 at 07.38.04 (1).jpeg" alt="Studio photo" loading="lazy">
+                <div class="overlay"><span class="overlay-icon">⊕</span></div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(2)">
+                <img src="WhatsApp Image 2026-05-13 at 07.38.04 (2).jpeg" alt="Studio photo" loading="lazy">
+                <div class="overlay"><span class="overlay-icon">⊕</span></div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(3)">
+                <img src="WhatsApp Image 2026-05-13 at 07.38.04 (3).jpeg" alt="Studio photo" loading="lazy">
+                <div class="overlay"><span class="overlay-icon">⊕</span></div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(4)">
+                <img src="WhatsApp Image 2026-05-13 at 07.38.04 (4).jpeg" alt="Studio photo" loading="lazy">
+                <div class="overlay"><span class="overlay-icon">⊕</span></div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(5)">
+                <img src="WhatsApp Image 2026-05-13 at 07.38.04 (5).jpeg" alt="Studio photo" loading="lazy">
+                <div class="overlay"><span class="overlay-icon">⊕</span></div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(6)">
+                <img src="WhatsApp Image 2026-05-13 at 07.38.04 (6).jpeg" alt="Studio photo" loading="lazy">
+                <div class="overlay"><span class="overlay-icon">⊕</span></div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(7)">
+                <img src="WhatsApp Image 2026-05-13 at 07.38.04 (7).jpeg" alt="Studio photo" loading="lazy">
+                <div class="overlay"><span class="overlay-icon">⊕</span></div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(8)">
+                <img src="WhatsApp Image 2026-05-13 at 07.38.04 (8).jpeg" alt="Studio photo" loading="lazy">
+                <div class="overlay"><span class="overlay-icon">⊕</span></div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(9)">
+                <img src="WhatsApp Image 2026-05-13 at 07.38.04 (9).jpeg" alt="Studio photo" loading="lazy">
+                <div class="overlay"><span class="overlay-icon">⊕</span></div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(10)">
+                <img src="WhatsApp Image 2026-05-13 at 07.42.33.jpeg" alt="Studio photo" loading="lazy">
+                <div class="overlay"><span class="overlay-icon">⊕</span></div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(11)">
+                <img src="Alto.jpeg" alt="Studio photo" loading="lazy">
+                <div class="overlay"><span class="overlay-icon">⊕</span></div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(12)">
+                <img src="3.jpeg" alt="Studio photo" loading="lazy">
+                <div class="overlay"><span class="overlay-icon">⊕</span></div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">A Division Of Secret Sauce</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightboxOnBg(event)">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <button class="lightbox-prev" onclick="changeImage(-1)">&#8592;</button>
+    <img id="lightbox-img" src="" alt="Studio photo">
+    <button class="lightbox-next" onclick="changeImage(1)">&#8594;</button>
+</div>
+
+<script>
+    const images = [
+        "WhatsApp Image 2026-05-13 at 07.38.04.jpeg",
+        "WhatsApp Image 2026-05-13 at 07.38.04 (1).jpeg",
+        "WhatsApp Image 2026-05-13 at 07.38.04 (2).jpeg",
+        "WhatsApp Image 2026-05-13 at 07.38.04 (3).jpeg",
+        "WhatsApp Image 2026-05-13 at 07.38.04 (4).jpeg",
+        "WhatsApp Image 2026-05-13 at 07.38.04 (5).jpeg",
+        "WhatsApp Image 2026-05-13 at 07.38.04 (6).jpeg",
+        "WhatsApp Image 2026-05-13 at 07.38.04 (7).jpeg",
+        "WhatsApp Image 2026-05-13 at 07.38.04 (8).jpeg",
+        "WhatsApp Image 2026-05-13 at 07.38.04 (9).jpeg",
+        "WhatsApp Image 2026-05-13 at 07.42.33.jpeg",
+        "Alto.jpeg",
+        "3.jpeg"
+    ];
+
+    let current = 0;
+
+    function openLightbox(index) {
+        current = index;
+        document.getElementById('lightbox-img').src = images[current];
+        document.getElementById('lightbox').classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        document.getElementById('lightbox').classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    function closeLightboxOnBg(e) {
+        if (e.target === document.getElementById('lightbox')) closeLightbox();
+    }
+
+    function changeImage(dir) {
+        current = (current + dir + images.length) % images.length;
+        document.getElementById('lightbox-img').src = images[current];
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (!document.getElementById('lightbox').classList.contains('active')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') changeImage(-1);
+        if (e.key === 'ArrowRight') changeImage(1);
+    });
+</script>
+
+</body>
+</html>
