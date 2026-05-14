@@ -2,25 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>As Above Studios</title>
-
+    <title>As Above Studios — About</title>
     <link rel="stylesheet" href="style.css">
-
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-
     <link rel="manifest" href="site.webmanifest">
+    <style>
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            align-items: center;
+            margin-top: 32px;
+        }
+
+        .about-photo {
+            width: 100%;
+            border-radius: 24px;
+            border: 1px solid var(--line);
+            object-fit: cover;
+            aspect-ratio: 4 / 3;
+        }
+
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-
 <nav class="navbar">
     <a href="index.html" class="brand"><img src="AAS_Logo.png" alt="As Above Studios"></a>
     <div class="nav-links">
@@ -38,17 +52,17 @@
     <section class="content-card wide">
         <p class="eyebrow">About the studio</p>
         <h1>Who we are</h1>
-
-        <div class="text-grid">
-            <p>At As Above Audio Studio, we pride ourselves on guiding you through the recording process seamlessly and effortlessly.</p>
-            <p>We aim to create a laid-back environment for musicians of all genres and strive to make your sonic vision come to life.</p>
-            <p>Operating in Northwold near Northgate, we offer a full recording studio experience from live tracking to complete productions from start to finish.</p>
-            <p>We also provide live sound rentals with engineers to make your event sound and look exceptional.</p>
+        <div class="about-grid">
+            <div class="text-grid">
+                <p>At As Above Audio Studio, we pride ourselves on guiding you through the recording process seamlessly and effortlessly.</p>
+                <p>We aim to create a laid-back environment for musicians of all genres and strive to make your sonic vision come to life.</p>
+                <p>Operating in Northwold near Northgate, we offer a full recording studio experience from live tracking to complete productions from start to finish.</p>
+                <p>We also provide live sound rentals with engineers to make your event sound and look exceptional.</p>
+            </div>
+            <img src="WhatsApp Image 2026-05-13 at 07.38.04.jpeg" alt="As Above Studios" class="about-photo">
         </div>
     </section>
 </main>
-
 <footer class="footer">A Division Of Secret Sauce</footer>
-
 </body>
 </html>
