@@ -2,29 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>As Above Studios</title>
-
+    <title>As Above Studios — Gear</title>
+    <meta name="description" content="Explore the gear at As Above Studios — Behringer X32 & Wing, Marshall amps, Markbass, PDP drums, Alto monitors and more.">
     <link rel="stylesheet" href="style.css">
-
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-
     <link rel="manifest" href="site.webmanifest">
 </head>
-
 <body>
-
 <nav class="navbar">
     <a href="index.html" class="brand"><img src="AAS_Logo.png" alt="As Above Studios"></a>
-    <div class="nav-links">
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <div class="nav-links" id="navLinks">
         <a href="about.html">About</a>
         <a href="services.html">Services</a>
         <a href="gear.html">Gear</a>
@@ -39,7 +31,6 @@
     <section class="content-card wide">
         <p class="eyebrow">Studio tools</p>
         <h1>Gear</h1>
-
         <div class="gear-list">
             <div>Behringer X32</div>
             <div>Behringer Wing</div>
@@ -52,8 +43,18 @@
         </div>
     </section>
 </main>
-
 <footer class="footer">A Division Of Secret Sauce</footer>
-
+<script>
+  const toggle = document.getElementById("navToggle");
+  const links = document.getElementById("navLinks");
+  if (toggle) toggle.addEventListener("click", () => {
+    links.classList.toggle("open");
+    toggle.classList.toggle("active");
+  });
+  if (links) links.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+    links.classList.remove("open");
+    toggle.classList.remove("active");
+  }));
+</script>
 </body>
 </html>
