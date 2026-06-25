@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>As Above Studios — Gallery</title>
+    <meta name="description" content="A look inside As Above Studios — the gear, the room and the vibe. Based in Northwold, Johannesburg.">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -17,7 +18,6 @@
             gap: 16px;
             margin-top: 32px;
         }
-
         .gallery-item {
             position: relative;
             overflow: hidden;
@@ -28,13 +28,11 @@
             aspect-ratio: 4 / 3;
             transition: 0.25s ease;
         }
-
         .gallery-item:hover {
             border-color: rgba(255, 35, 79, 0.4);
             transform: translateY(-4px);
             box-shadow: 0 20px 50px rgba(0,0,0,0.4);
         }
-
         .gallery-item img {
             width: 100%;
             height: 100%;
@@ -42,22 +40,14 @@
             display: block;
             transition: 0.4s ease;
         }
-
-        .gallery-item:hover img {
-            transform: scale(1.05);
-        }
-
+        .gallery-item:hover img { transform: scale(1.05); }
         .gallery-item .overlay {
             position: absolute;
             inset: 0;
             background: rgba(255, 35, 79, 0.0);
             transition: 0.25s ease;
         }
-
-        .gallery-item:hover .overlay {
-            background: rgba(255, 35, 79, 0.12);
-        }
-
+        .gallery-item:hover .overlay { background: rgba(255, 35, 79, 0.12); }
         .lightbox {
             display: none;
             position: fixed;
@@ -69,11 +59,7 @@
             justify-content: center;
             padding: 20px;
         }
-
-        .lightbox.active {
-            display: flex;
-        }
-
+        .lightbox.active { display: flex; }
         .lightbox img {
             max-width: 90vw;
             max-height: 88vh;
@@ -82,7 +68,6 @@
             box-shadow: 0 40px 100px rgba(0,0,0,0.7);
             border: 1px solid var(--line);
         }
-
         .lightbox-close {
             position: fixed;
             top: 22px;
@@ -101,14 +86,8 @@
             transition: 0.2s ease;
             line-height: 1;
         }
-
-        .lightbox-close:hover {
-            background: var(--red);
-            border-color: var(--red);
-        }
-
-        .lightbox-prev,
-        .lightbox-next {
+        .lightbox-close:hover { background: var(--red); border-color: var(--red); }
+        .lightbox-prev, .lightbox-next {
             position: fixed;
             top: 50%;
             transform: translateY(-50%);
@@ -125,38 +104,22 @@
             justify-content: center;
             transition: 0.2s ease;
         }
-
         .lightbox-prev { left: 18px; }
         .lightbox-next { right: 18px; }
-
-        .lightbox-prev:hover,
-        .lightbox-next:hover {
-            background: var(--red);
-            border-color: var(--red);
-        }
-
+        .lightbox-prev:hover, .lightbox-next:hover { background: var(--red); border-color: var(--red); }
         @media (max-width: 768px) {
-            .gallery-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-                gap: 12px;
-            }
-
+            .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
             .lightbox-prev { left: 8px; }
             .lightbox-next { right: 8px; }
         }
-
-        @media (max-width: 480px) {
-            .gallery-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+        @media (max-width: 480px) { .gallery-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
-
 <nav class="navbar">
     <a href="index.html" class="brand"><img src="AAS_Logo.png" alt="As Above Studios"></a>
-    <div class="nav-links">
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <div class="nav-links" id="navLinks">
         <a href="about.html">About</a>
         <a href="services.html">Services</a>
         <a href="gear.html">Gear</a>
@@ -167,87 +130,37 @@
         <a href="contact.html">Contact</a>
     </div>
 </nav>
-
 <main class="page">
     <section class="content-card wide">
         <p class="eyebrow">The Space</p>
         <h1>Gallery</h1>
         <p class="page-copy">A look inside As Above Studios — the gear, the room, and the vibe.</p>
-
         <div class="gallery-grid">
-            <div class="gallery-item" onclick="openLightbox(0)">
-                <img src="WhatsApp Image 2026-05-13 at 07.38.04.jpeg" alt="Studio photo" loading="lazy">
-                <div class="overlay"></div>
-            </div>
-            <div class="gallery-item" onclick="openLightbox(1)">
-                <img src="WhatsApp Image 2026-05-13 at 07.38.04 (1).jpeg" alt="Studio photo" loading="lazy">
-                <div class="overlay"></div>
-            </div>
-            <div class="gallery-item" onclick="openLightbox(2)">
-                <img src="WhatsApp Image 2026-05-13 at 07.38.04 (2)1.jpeg" alt="Studio photo" loading="lazy">
-                <div class="overlay"></div>
-            </div>
-            <div class="gallery-item" onclick="openLightbox(3)">
-                <img src="WhatsApp Image 2026-05-13 at 07.38.04 (3).jpeg" alt="Studio photo" loading="lazy">
-                <div class="overlay"></div>
-            </div>
-            <div class="gallery-item" onclick="openLightbox(4)">
-                <img src="WhatsApp Image 2026-05-13 at 07.38.04 (3)2.jpeg" alt="Studio photo" loading="lazy">
-                <div class="overlay"></div>
-            </div>
-            <div class="gallery-item" onclick="openLightbox(5)">
-                <img src="WhatsApp Image 2026-05-13 at 07.38.04 (4).jpeg" alt="Studio photo" loading="lazy">
-                <div class="overlay"></div>
-            </div>
-            <div class="gallery-item" onclick="openLightbox(6)">
-                <img src="WhatsApp Image 2026-05-13 at 07.38.04 (5).jpeg" alt="Studio photo" loading="lazy">
-                <div class="overlay"></div>
-            </div>
-            <div class="gallery-item" onclick="openLightbox(7)">
-                <img src="WhatsApp Image 2026-05-13 at 07.38.04 (5)3.jpeg" alt="Studio photo" loading="lazy">
-                <div class="overlay"></div>
-            </div>
-            <div class="gallery-item" onclick="openLightbox(8)">
-                <img src="WhatsApp Image 2026-05-13 at 07.38.04 (6).jpeg" alt="Studio photo" loading="lazy">
-                <div class="overlay"></div>
-            </div>
-            <div class="gallery-item" onclick="openLightbox(9)">
-                <img src="WhatsApp Image 2026-05-13 at 07.38.04 (6)4.jpeg" alt="Studio photo" loading="lazy">
-                <div class="overlay"></div>
-            </div>
-            <div class="gallery-item" onclick="openLightbox(10)">
-                <img src="WhatsApp Image 2026-05-13 at 07.38.04 (7).jpeg" alt="Studio photo" loading="lazy">
-                <div class="overlay"></div>
-            </div>
-            <div class="gallery-item" onclick="openLightbox(11)">
-                <img src="WhatsApp Image 2026-05-13 at 07.38.04 (8).jpeg" alt="Studio photo" loading="lazy">
-                <div class="overlay"></div>
-            </div>
-            <div class="gallery-item" onclick="openLightbox(12)">
-                <img src="WhatsApp Image 2026-05-13 at 07.38.04 (9).jpeg" alt="Studio photo" loading="lazy">
-                <div class="overlay"></div>
-            </div>
-            <div class="gallery-item" onclick="openLightbox(13)">
-                <img src="WhatsApp Image 2026-05-13 at 07.38.045.jpeg" alt="Studio photo" loading="lazy">
-                <div class="overlay"></div>
-            </div>
-            <div class="gallery-item" onclick="openLightbox(14)">
-                <img src="WhatsApp Image 2026-05-13 at 07.42.33.jpeg" alt="Studio photo" loading="lazy">
-                <div class="overlay"></div>
-            </div>
+            <div class="gallery-item" onclick="openLightbox(0)"><img src="WhatsApp Image 2026-05-13 at 07.38.04.jpeg" alt="Studio photo" loading="lazy"><div class="overlay"></div></div>
+            <div class="gallery-item" onclick="openLightbox(1)"><img src="WhatsApp Image 2026-05-13 at 07.38.04 (1).jpeg" alt="Studio photo" loading="lazy"><div class="overlay"></div></div>
+            <div class="gallery-item" onclick="openLightbox(2)"><img src="WhatsApp Image 2026-05-13 at 07.38.04 (2)1.jpeg" alt="Studio photo" loading="lazy"><div class="overlay"></div></div>
+            <div class="gallery-item" onclick="openLightbox(3)"><img src="WhatsApp Image 2026-05-13 at 07.38.04 (3).jpeg" alt="Studio photo" loading="lazy"><div class="overlay"></div></div>
+            <div class="gallery-item" onclick="openLightbox(4)"><img src="WhatsApp Image 2026-05-13 at 07.38.04 (3)2.jpeg" alt="Studio photo" loading="lazy"><div class="overlay"></div></div>
+            <div class="gallery-item" onclick="openLightbox(5)"><img src="WhatsApp Image 2026-05-13 at 07.38.04 (4).jpeg" alt="Studio photo" loading="lazy"><div class="overlay"></div></div>
+            <div class="gallery-item" onclick="openLightbox(6)"><img src="WhatsApp Image 2026-05-13 at 07.38.04 (5).jpeg" alt="Studio photo" loading="lazy"><div class="overlay"></div></div>
+            <div class="gallery-item" onclick="openLightbox(7)"><img src="WhatsApp Image 2026-05-13 at 07.38.04 (5)3.jpeg" alt="Studio photo" loading="lazy"><div class="overlay"></div></div>
+            <div class="gallery-item" onclick="openLightbox(8)"><img src="WhatsApp Image 2026-05-13 at 07.38.04 (6).jpeg" alt="Studio photo" loading="lazy"><div class="overlay"></div></div>
+            <div class="gallery-item" onclick="openLightbox(9)"><img src="WhatsApp Image 2026-05-13 at 07.38.04 (6)4.jpeg" alt="Studio photo" loading="lazy"><div class="overlay"></div></div>
+            <div class="gallery-item" onclick="openLightbox(10)"><img src="WhatsApp Image 2026-05-13 at 07.38.04 (7).jpeg" alt="Studio photo" loading="lazy"><div class="overlay"></div></div>
+            <div class="gallery-item" onclick="openLightbox(11)"><img src="WhatsApp Image 2026-05-13 at 07.38.04 (8).jpeg" alt="Studio photo" loading="lazy"><div class="overlay"></div></div>
+            <div class="gallery-item" onclick="openLightbox(12)"><img src="WhatsApp Image 2026-05-13 at 07.38.04 (9).jpeg" alt="Studio photo" loading="lazy"><div class="overlay"></div></div>
+            <div class="gallery-item" onclick="openLightbox(13)"><img src="WhatsApp Image 2026-05-13 at 07.38.045.jpeg" alt="Studio photo" loading="lazy"><div class="overlay"></div></div>
+            <div class="gallery-item" onclick="openLightbox(14)"><img src="WhatsApp Image 2026-05-13 at 07.42.33.jpeg" alt="Studio photo" loading="lazy"><div class="overlay"></div></div>
         </div>
     </section>
 </main>
-
 <footer class="footer">A Division Of Secret Sauce</footer>
-
 <div class="lightbox" id="lightbox" onclick="closeLightboxOnBg(event)">
     <button class="lightbox-close" onclick="closeLightbox()">✕</button>
     <button class="lightbox-prev" onclick="changeImage(-1)">&#8592;</button>
     <img id="lightbox-img" src="" alt="Studio photo">
     <button class="lightbox-next" onclick="changeImage(1)">&#8594;</button>
 </div>
-
 <script>
     const images = [
         "WhatsApp Image 2026-05-13 at 07.38.04.jpeg",
@@ -266,30 +179,24 @@
         "WhatsApp Image 2026-05-13 at 07.38.045.jpeg",
         "WhatsApp Image 2026-05-13 at 07.42.33.jpeg"
     ];
-
     let current = 0;
-
     function openLightbox(index) {
         current = index;
         document.getElementById('lightbox-img').src = images[current];
         document.getElementById('lightbox').classList.add('active');
         document.body.style.overflow = 'hidden';
     }
-
     function closeLightbox() {
         document.getElementById('lightbox').classList.remove('active');
         document.body.style.overflow = '';
     }
-
     function closeLightboxOnBg(e) {
         if (e.target === document.getElementById('lightbox')) closeLightbox();
     }
-
     function changeImage(dir) {
         current = (current + dir + images.length) % images.length;
         document.getElementById('lightbox-img').src = images[current];
     }
-
     document.addEventListener('keydown', (e) => {
         if (!document.getElementById('lightbox').classList.contains('active')) return;
         if (e.key === 'Escape') closeLightbox();
@@ -297,6 +204,17 @@
         if (e.key === 'ArrowRight') changeImage(1);
     });
 </script>
-
+<script>
+  const toggle = document.getElementById("navToggle");
+  const links = document.getElementById("navLinks");
+  if (toggle) toggle.addEventListener("click", () => {
+    links.classList.toggle("open");
+    toggle.classList.toggle("active");
+  });
+  if (links) links.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+    links.classList.remove("open");
+    toggle.classList.remove("active");
+  }));
+</script>
 </body>
 </html>
