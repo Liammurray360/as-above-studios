@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>As Above Studios — Contact</title>
+    <meta name="description" content="Get in touch with As Above Studios. Book a recording, mixing or rehearsal session via WhatsApp, email or phone. Based in Northwold, Johannesburg.">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -14,7 +15,8 @@
 <body>
 <nav class="navbar">
     <a href="index.html" class="brand"><img src="AAS_Logo.png" alt="As Above Studios"></a>
-    <div class="nav-links">
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <div class="nav-links" id="navLinks">
         <a href="about.html">About</a>
         <a href="services.html">Services</a>
         <a href="gear.html">Gear</a>
@@ -44,13 +46,23 @@
             </div>
         </div>
         <div class="booking-panel">
-            <p class="booking-text">
-                Looking to book studio time, rehearsals or live audio?
-            </p>
+            <p class="booking-text">Looking to book studio time, rehearsals or live audio?</p>
             <a href="https://wa.me/27616723985?text=Hey%20As%20Above%20Studios%2C%20I%27d%20like%20to%20book%20a%20session." target="_blank" class="booking-button">Book Via WhatsApp</a>
         </div>
     </section>
 </main>
 <footer class="footer">A Division Of Secret Sauce</footer>
+<script>
+  const toggle = document.getElementById("navToggle");
+  const links = document.getElementById("navLinks");
+  if (toggle) toggle.addEventListener("click", () => {
+    links.classList.toggle("open");
+    toggle.classList.toggle("active");
+  });
+  if (links) links.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+    links.classList.remove("open");
+    toggle.classList.remove("active");
+  }));
+</script>
 </body>
 </html>
