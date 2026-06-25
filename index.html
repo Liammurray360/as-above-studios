@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>As Above Studios</title>
+    <meta name="description" content="As Above Studios — a modern recording, mixing, production and live audio space in Northwold, Johannesburg. Book your session today.">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -13,7 +14,9 @@
 </head>
 <body>
 <nav class="navbar">
-    <div class="nav-links">
+    <a href="index.html" class="brand"><img src="AAS_Logo.png" alt="As Above Studios"></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <div class="nav-links" id="navLinks">
         <a href="about.html">About</a>
         <a href="services.html">Services</a>
         <a href="gear.html">Gear</a>
@@ -44,5 +47,17 @@
     </section>
 </main>
 <footer class="footer">A Division Of Secret Sauce</footer>
+<script>
+  const toggle = document.getElementById("navToggle");
+  const links = document.getElementById("navLinks");
+  if (toggle) toggle.addEventListener("click", () => {
+    links.classList.toggle("open");
+    toggle.classList.toggle("active");
+  });
+  if (links) links.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+    links.classList.remove("open");
+    toggle.classList.remove("active");
+  }));
+</script>
 </body>
 </html>
