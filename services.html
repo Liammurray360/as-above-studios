@@ -4,17 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>As Above Studios — Services</title>
+    <meta name="description" content="Recording, mixing, mastering, production, rehearsals and live audio — see everything As Above Studios offers artists and bands in Johannesburg.">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="manifest" href="site.webmanifest">
+    <style>
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+            margin-top: 32px;
+        }
+        .service-card {
+            padding: 28px;
+            border-radius: 24px;
+            border: 1px solid var(--line);
+            background: rgba(255,255,255,0.04);
+            transition: 0.25s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .service-card:hover {
+            border-color: rgba(255, 35, 79, 0.35);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+        }
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            background: rgba(255, 35, 79, 0.12);
+            border: 1px solid rgba(255, 35, 79, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            flex-shrink: 0;
+        }
+        .service-card h2 {
+            font-size: 1.05rem;
+            font-weight: 800;
+            letter-spacing: 0.03em;
+            color: white;
+            margin: 0;
+        }
+        .service-card p {
+            color: var(--muted);
+            font-size: 0.9rem;
+            line-height: 1.75;
+            margin: 0;
+            flex: 1;
+        }
+        .service-tag {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--red);
+            background: rgba(255, 35, 79, 0.1);
+            border: 1px solid rgba(255, 35, 79, 0.2);
+            border-radius: 999px;
+            padding: 3px 10px;
+            align-self: flex-start;
+        }
+        @media (max-width: 900px) {
+            .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+        @media (max-width: 540px) {
+            .services-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
 <nav class="navbar">
     <a href="index.html" class="brand"><img src="AAS_Logo.png" alt="As Above Studios"></a>
-    <div class="nav-links">
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <div class="nav-links" id="navLinks">
         <a href="about.html">About</a>
         <a href="services.html">Services</a>
         <a href="gear.html">Gear</a>
@@ -29,13 +99,44 @@
     <section class="content-card wide">
         <p class="eyebrow">What we do</p>
         <h1>Services</h1>
-        <div class="card-grid">
-            <article class="mini-card"><h2>Recording</h2><p>Professional multi-track recording sessions for artists, bands and creators.</p></article>
-            <article class="mini-card"><h2>Mixing</h2><p>Clean, modern mixes built for clarity, energy and emotional impact.</p></article>
-            <article class="mini-card"><h2>Production</h2><p>Full song production from rough ideas to release-ready tracks.</p></article>
-            <article class="mini-card"><h2>Mastering</h2><p>Final polish and optimisation for singles, EPs and full releases.</p></article>
-            <article class="mini-card"><h2>Rehearsals</h2><p>A relaxed and creative rehearsal environment for musicians and bands. IEM friendly.</p></article>
-            <article class="mini-card"><h2>Live Audio</h2><p>Professional live sound rentals and engineers for events and performances.</p></article>
+        <p class="page-copy">From live tracking to release-ready masters — here's what we offer.</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🎙️</div>
+                <h2>Recording</h2>
+                <p>Professional multi-track recording for bands, artists and creators. We track drums, guitars, bass, vocals and anything in between — live room or isolated, depending on what the song needs.</p>
+                <span class="service-tag">In Studio</span>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎚️</div>
+                <h2>Mixing</h2>
+                <p>Clean, modern mixes that translate everywhere. We balance energy, clarity and emotion — whether you recorded with us or are sending stems from somewhere else.</p>
+                <span class="service-tag">In Studio / Remote</span>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">✨</div>
+                <h2>Mastering</h2>
+                <p>Final polish and loudness optimisation for singles, EPs and full albums. Delivered in whatever format you need — streaming, vinyl, or both.</p>
+                <span class="service-tag">In Studio / Remote</span>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎛️</div>
+                <h2>Production</h2>
+                <p>Full song production from rough demos to release-ready tracks. We work with you from arrangement and sound design through to the final master.</p>
+                <span class="service-tag">In Studio</span>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🥁</div>
+                <h2>Rehearsals</h2>
+                <p>A comfortable, properly equipped rehearsal space for bands of all sizes. Skeleton drum kit, guitar and bass amps, full PA, floor monitors and IEM-friendly setup ready to go.</p>
+                <span class="service-tag">In Studio</span>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔊</div>
+                <h2>Live Audio</h2>
+                <p>Professional live sound engineers and equipment for events, shows and performances. We bring the gear, set it up, and make sure your audience hears exactly what they should.</p>
+                <span class="service-tag">On Location</span>
+            </div>
         </div>
         <div class="booking-panel">
             <p class="booking-text">Ready to book a session or ask us anything?</p>
@@ -44,5 +145,17 @@
     </section>
 </main>
 <footer class="footer">A Division Of Secret Sauce</footer>
+<script>
+  const toggle = document.getElementById("navToggle");
+  const links = document.getElementById("navLinks");
+  if (toggle) toggle.addEventListener("click", () => {
+    links.classList.toggle("open");
+    toggle.classList.toggle("active");
+  });
+  if (links) links.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+    links.classList.remove("open");
+    toggle.classList.remove("active");
+  }));
+</script>
 </body>
 </html>
