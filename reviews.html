@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>As Above Studios — Reviews</title>
+    <meta name="description" content="See what artists and bands say about recording and rehearsing at As Above Studios in Johannesburg. Trusted by Moshmallow, UltraMel, After Agatha and more.">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -17,7 +18,6 @@
             gap: 20px;
             margin-top: 32px;
         }
-
         .review-card {
             position: relative;
             padding: 28px;
@@ -29,13 +29,11 @@
             flex-direction: column;
             gap: 16px;
         }
-
         .review-card:hover {
             border-color: rgba(255, 35, 79, 0.35);
             transform: translateY(-4px);
             box-shadow: 0 20px 50px rgba(0,0,0,0.35);
         }
-
         .review-card::before {
             content: "\201C";
             position: absolute;
@@ -48,22 +46,8 @@
             font-family: 'Archivo Black', sans-serif;
             pointer-events: none;
         }
-
-        .review-text {
-            color: var(--muted);
-            line-height: 1.8;
-            font-size: 0.97rem;
-            flex: 1;
-        }
-
-        .review-author {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            padding-top: 16px;
-            border-top: 1px solid var(--line);
-        }
-
+        .review-text { color: var(--muted); line-height: 1.8; font-size: 0.97rem; flex: 1; }
+        .review-author { display: flex; align-items: center; gap: 14px; padding-top: 16px; border-top: 1px solid var(--line); }
         .author-avatar {
             width: 42px;
             height: 42px;
@@ -77,33 +61,10 @@
             color: white;
             flex-shrink: 0;
         }
-
-        .author-info {
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-        }
-
-        .author-name {
-            font-weight: 800;
-            font-size: 0.9rem;
-            letter-spacing: 0.04em;
-            color: white;
-        }
-
-        .author-band {
-            font-size: 0.78rem;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--red);
-            text-decoration: none;
-        }
-
-        .author-band:hover {
-            color: white;
-        }
-
+        .author-info { display: flex; flex-direction: column; gap: 2px; }
+        .author-name { font-weight: 800; font-size: 0.9rem; letter-spacing: 0.04em; color: white; }
+        .author-band { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--red); text-decoration: none; }
+        .author-band:hover { color: white; }
         .cta-panel {
             margin-top: 28px;
             padding: 28px;
@@ -116,37 +77,19 @@
             gap: 20px;
             flex-wrap: wrap;
         }
-
-        .cta-panel p {
-            color: var(--muted);
-            font-size: 1rem;
-            font-weight: 600;
-            line-height: 1.6;
-        }
-
+        .cta-panel p { color: var(--muted); font-size: 1rem; font-weight: 600; line-height: 1.6; }
         @media (max-width: 768px) {
-            .reviews-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .cta-panel {
-                flex-direction: column;
-                align-items: stretch;
-                text-align: center;
-            }
-
-            .cta-panel .button {
-                width: 100%;
-                justify-content: center;
-            }
+            .reviews-grid { grid-template-columns: 1fr; }
+            .cta-panel { flex-direction: column; align-items: stretch; text-align: center; }
+            .cta-panel .button { width: 100%; justify-content: center; }
         }
     </style>
 </head>
 <body>
-
 <nav class="navbar">
     <a href="index.html" class="brand"><img src="AAS_Logo.png" alt="As Above Studios"></a>
-    <div class="nav-links">
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <div class="nav-links" id="navLinks">
         <a href="about.html">About</a>
         <a href="services.html">Services</a>
         <a href="gear.html">Gear</a>
@@ -157,19 +100,14 @@
         <a href="contact.html">Contact</a>
     </div>
 </nav>
-
 <main class="page">
     <section class="content-card wide">
         <p class="eyebrow">What bands say</p>
         <h1>Reviews</h1>
         <p class="page-copy">Straight from the artists who've been through the studio.</p>
-
         <div class="reviews-grid">
-
             <div class="review-card">
-                <p class="review-text">
-                    Our experience with As Above Studio was exceptional. Liam fosters a calm, positive atmosphere throughout the recording process, making the entire experience both comfortable and productive. He is highly responsive in all communications and attentive to our specific requirements. The studio itself is beautifully maintained, clean, organised, and visually appealing. Liam provides constructive, thoughtful feedback and is consistently available to assist with any adjustments that may be needed. Moshmallow had a 10/10 experience and would recommend Liam and As Above Studio to any band looking to record their next single, EP or Album.
-                </p>
+                <p class="review-text">Our experience with As Above Studio was exceptional. Liam fosters a calm, positive atmosphere throughout the recording process, making the entire experience both comfortable and productive. He is highly responsive in all communications and attentive to our specific requirements. The studio itself is beautifully maintained, clean, organised, and visually appealing. Liam provides constructive, thoughtful feedback and is consistently available to assist with any adjustments that may be needed. Moshmallow had a 10/10 experience and would recommend Liam and As Above Studio to any band looking to record their next single, EP or Album.</p>
                 <div class="review-author">
                     <div class="author-avatar">M</div>
                     <div class="author-info">
@@ -178,11 +116,8 @@
                     </div>
                 </div>
             </div>
-
             <div class="review-card">
-                <p class="review-text">
-                    We've had the pleasure of rehearsing at As Above Studio with two of our other projects, and bringing UltraMel over was an absolute no-brainer. Liam and his team are incredibly professional and genuinely wonderful people to work with. Everything is always prepared before we arrive — it's literally plug in, quick sound check, and we're good to get cracking. Liam goes out of his way to adjust the setup and make the space as comfortable as possible for us every time. Sterling service, fantastic energy, and a really great rate for the quality we get. Highly recommended from UltraMel Band!
-                </p>
+                <p class="review-text">We've had the pleasure of rehearsing at As Above Studio with two of our other projects, and bringing UltraMel over was an absolute no-brainer. Liam and his team are incredibly professional and genuinely wonderful people to work with. Everything is always prepared before we arrive — it's literally plug in, quick sound check, and we're good to get cracking. Liam goes out of his way to adjust the setup and make the space as comfortable as possible for us every time. Sterling service, fantastic energy, and a really great rate for the quality we get. Highly recommended from UltraMel Band!</p>
                 <div class="review-author">
                     <div class="author-avatar">U</div>
                     <div class="author-info">
@@ -191,11 +126,8 @@
                     </div>
                 </div>
             </div>
-
             <div class="review-card">
-                <p class="review-text">
-                    Recording with Liam at As Above Studio is an absolute privilege. With his experience and qualifications in the sound industry, he not only offers a final product of the highest quality, but also a memorable journey that includes helpful guidance, creative ideas and the patience of a saint. The gear at his disposal is top notch and he offers a wide variety of options and recording techniques that caters for all kinds of genres and artists. All in all, our experience with him has been unbelievably positive and we would highly recommend him to anyone looking to turn their art into a masterpiece.
-                </p>
+                <p class="review-text">Recording with Liam at As Above Studio is an absolute privilege. With his experience and qualifications in the sound industry, he not only offers a final product of the highest quality, but also a memorable journey that includes helpful guidance, creative ideas and the patience of a saint. The gear at his disposal is top notch and he offers a wide variety of options and recording techniques that caters for all kinds of genres and artists. All in all, our experience with him has been unbelievably positive and we would highly recommend him to anyone looking to turn their art into a masterpiece.</p>
                 <div class="review-author">
                     <div class="author-avatar">N</div>
                     <div class="author-info">
@@ -204,11 +136,8 @@
                     </div>
                 </div>
             </div>
-
             <div class="review-card">
-                <p class="review-text">
-                    After Agatha has used As Above Studios as our rehearsal space for several months, and the experience has always been extremely pleasant and professional. The team are always happy to accommodate with available times, with PA and in-ears setups, and have fully functional equipment available including multiple monitors, a skeleton drum kit and a variety of guitar and bass amps and cabs. All your band rehearsal needs are catered for at a reasonable hourly rate. Highly recommended to any bands looking for a sweet space to make noise!
-                </p>
+                <p class="review-text">After Agatha has used As Above Studios as our rehearsal space for several months, and the experience has always been extremely pleasant and professional. The team are always happy to accommodate with available times, with PA and in-ears setups, and have fully functional equipment available including multiple monitors, a skeleton drum kit and a variety of guitar and bass amps and cabs. All your band rehearsal needs are catered for at a reasonable hourly rate. Highly recommended to any bands looking for a sweet space to make noise!</p>
                 <div class="review-author">
                     <div class="author-avatar">A</div>
                     <div class="author-info">
@@ -217,11 +146,8 @@
                     </div>
                 </div>
             </div>
-
             <div class="review-card">
-                <p class="review-text">
-                    We started looking for a practice space when weekends became too busy and we couldn't make too much noise on weekdays. Then we found As Above Studios and we've been practicing there for a few months now. We can honestly say it's been a great space for the band to experiment and get some solid practicing sessions in, especially on weekdays, allowing the band to free up weekends to pursue other things. The studio location is ideal for bands located in the Westrand and Midrand area. They have a full console and skeleton drum kit for you to use and can accommodate you whether you need monitors or run your in-ear monitoring system. The practice space has a great aesthetic feel so recording video content there is an added bonus. Liam and his team know what they are doing and are always friendly to work with. If you're looking for a studio to practice or record at we highly recommend giving AAS a chance. You won't regret it.
-                </p>
+                <p class="review-text">We started looking for a practice space when weekends became too busy and we couldn't make too much noise on weekdays. Then we found As Above Studios and we've been practicing there for a few months now. We can honestly say it's been a great space for the band to experiment and get some solid practicing sessions in, especially on weekdays, allowing the band to free up weekends to pursue other things. The studio location is ideal for bands located in the Westrand and Midrand area. They have a full console and skeleton drum kit for you to use and can accommodate you whether you need monitors or run your in-ear monitoring system. The practice space has a great aesthetic feel so recording video content there is an added bonus. Liam and his team know what they are doing and are always friendly to work with. If you're looking for a studio to practice or record at we highly recommend giving AAS a chance. You won't regret it.</p>
                 <div class="review-author">
                     <div class="author-avatar">B</div>
                     <div class="author-info">
@@ -230,11 +156,8 @@
                     </div>
                 </div>
             </div>
-
             <div class="review-card">
-                <p class="review-text">
-                    A fantastic recording experience from start to finish. The atmosphere was relaxed, comfortable, and full of good energy, making it easy to perform naturally. Despite the fun and laid-back environment, the professionalism and attention to detail were exceptional. The recordings turned out great, and we couldn't be happier with the result.
-                </p>
+                <p class="review-text">A fantastic recording experience from start to finish. The atmosphere was relaxed, comfortable, and full of good energy, making it easy to perform naturally. Despite the fun and laid-back environment, the professionalism and attention to detail were exceptional. The recordings turned out great, and we couldn't be happier with the result.</p>
                 <div class="review-author">
                     <div class="author-avatar">D</div>
                     <div class="author-info">
@@ -243,18 +166,25 @@
                     </div>
                 </div>
             </div>
-
         </div>
-
         <div class="cta-panel">
             <p>Recorded or rehearsed with us? We'd love to hear what you thought.</p>
             <a href="https://wa.me/27616723985?text=Hey%20As%20Above%20Studios%2C%20I%27d%20like%20to%20leave%20a%20review." target="_blank" class="button primary">Leave a Review</a>
         </div>
-
     </section>
 </main>
-
 <footer class="footer">A Division Of Secret Sauce</footer>
-
+<script>
+  const toggle = document.getElementById("navToggle");
+  const links = document.getElementById("navLinks");
+  if (toggle) toggle.addEventListener("click", () => {
+    links.classList.toggle("open");
+    toggle.classList.toggle("active");
+  });
+  if (links) links.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+    links.classList.remove("open");
+    toggle.classList.remove("active");
+  }));
+</script>
 </body>
 </html>
